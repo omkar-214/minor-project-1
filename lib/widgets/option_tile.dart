@@ -14,7 +14,10 @@ class OptionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
+
       alignment: Alignment.centerLeft,
+
+
       child: ConstrainedBox(
         constraints: BoxConstraints(maxWidth: 350),
         child: GestureDetector(
@@ -31,7 +34,9 @@ class OptionTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(6),
             ),
             child: Row(
+
               children: [
+
                 Icon(
                   isSelected
                       ? Icons.radio_button_checked

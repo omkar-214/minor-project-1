@@ -13,23 +13,28 @@ class ResultPage extends StatelessWidget {
   });
 
   Widget infoCard(String title, String value) {
-    return Expanded(
-      child: Container(
-        padding: EdgeInsets.all(22),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title, style: TextStyle(fontSize: 11, color: Colors.black54)),
-            SizedBox(height: 14),
-            Text(
-              value,
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
-            ),
-          ],
+    return Scaffold(
+      body: Expanded(
+
+        child: Container(
+          padding: EdgeInsets.all(22),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title, style: TextStyle(fontSize: 11, color: Colors.black54)),
+
+              SizedBox(height: 14),
+
+              Text(
+                value,
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -40,7 +45,9 @@ class ResultPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title, style: TextStyle(fontSize: 11, color: Colors.black54)),
+
         SizedBox(height: 14),
+
         Text(
           "$value",
           style: TextStyle(
@@ -79,9 +86,12 @@ class ResultPage extends StatelessWidget {
             child: ConstrainedBox(
               constraints: BoxConstraints(maxWidth: 800),
               child: Column(
+
                 children: [
+
                   SizedBox(height: 50),
                   CircleAvatar(
+
                     radius: 28,
                     backgroundColor: isPassed ? Colors.green : Colors.red,
                     child: Icon(
@@ -91,6 +101,7 @@ class ResultPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 25),
+
                   Text(
                     isPassed
                         ? "Congratulations $userName ,\nyou have passed the assessment."
@@ -99,12 +110,17 @@ class ResultPage extends StatelessWidget {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 25),
+
+
                   Wrap(
+
                     spacing: 12,
                     runSpacing: 12,
                     alignment: WrapAlignment.center,
                     children: [
+
                       OutlinedButton.icon(
+
                         onPressed: () {
                           Navigator.popUntil(context, (route) => route.isFirst);
                         },
@@ -115,6 +131,8 @@ class ResultPage extends StatelessWidget {
                           padding: EdgeInsets.symmetric(horizontal: 22, vertical: 18),
                         ),
                       ),
+
+
                       ElevatedButton.icon(
                         onPressed: () {
                           Navigator.pushReplacement(
@@ -135,20 +153,28 @@ class ResultPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 40),
+
+
                   Row(
                     children: [
                       infoCard("ASSESSMENT NAME", "Smart Quiz"),
                     ],
                   ),
                   SizedBox(height: 16),
+
+
                   Row(
+
                     children: [
                       infoCard("TOTAL MARKS SCORED", "$score.00 / $total marks"),
                       SizedBox(width: 16),
                       infoCard("PERCENTAGE", "${percentage.toStringAsFixed(0)} %"),
                     ],
                   ),
+
                   SizedBox(height: 16),
+
+
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.all(22),

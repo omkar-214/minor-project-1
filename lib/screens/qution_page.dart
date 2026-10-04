@@ -10,7 +10,7 @@ class QutionPage extends StatefulWidget {
 
 class _QutionPageState extends State<QutionPage> {
   int currentIndex = 0;
-  String userName = "Omkar";
+  String userName = "Guest";
   List<int> answers = [];
   List<bool> marked = [];
 
@@ -121,6 +121,7 @@ class _QutionPageState extends State<QutionPage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+
         Row(
           children: [
             Text(
@@ -158,6 +159,7 @@ class _QutionPageState extends State<QutionPage> {
     bool isLast = currentIndex == questionList.length - 1;
 
     return Wrap(
+
       spacing: 10,
       runSpacing: 10,
       children: [
@@ -175,18 +177,22 @@ class _QutionPageState extends State<QutionPage> {
             padding: EdgeInsets.symmetric(horizontal: 22, vertical: 18),
           ),
         ),
+
+
         OutlinedButton.icon(
           onPressed: () {
             setState(() {
               answers[currentIndex] = -1;
             });
           },
+
           icon: Icon(Icons.delete_outline, size: 18),
           label: Text("Clear Response"),
           style: OutlinedButton.styleFrom(
             padding: EdgeInsets.symmetric(horizontal: 22, vertical: 18),
           ),
         ),
+
         OutlinedButton.icon(
           onPressed: () {
             setState(() {
@@ -202,6 +208,8 @@ class _QutionPageState extends State<QutionPage> {
             padding: EdgeInsets.symmetric(horizontal: 22, vertical: 18),
           ),
         ),
+
+
         ElevatedButton.icon(
           onPressed: () {
             if (isLast) {
@@ -212,16 +220,19 @@ class _QutionPageState extends State<QutionPage> {
               });
             }
           },
+
           icon: Icon(
             isLast ? Icons.upload_outlined : Icons.check_circle_outline,
             color: Colors.white,
             size: 18,
           ),
+
           label: Text(
             isLast ? "Submit Assessment" : "Save and Next",
             style: TextStyle(color: Colors.white),
           ),
-          style: ElevatedButton.styleFrom(
+
+          style:  ElevatedButton.styleFrom(
             backgroundColor: Color(0xFF16966A),
             padding: EdgeInsets.symmetric(horizontal: 22, vertical: 18),
           ),
